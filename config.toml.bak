@@ -1,0 +1,151 @@
+# baseURL = "https://u604b.github.io/"
+# baseURL = "https://u604b.gitee.io/"
+baseURL = "https://ao2233.xyz/"
+title = "帰宅部"
+theme="AO"
+copyright = "AO"
+
+# Code Highlight
+pygmentsstyle = "native"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+paginate=1 # articles per page
+
+
+[params]
+	mode="auto" # color-mode → light,dark,toggle or auto
+	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
+	# subtitle = "Minimal and Clean [blog theme for Hugo](https://github.com)"
+	subtitle = "さらば、すべてのエヴァンゲリオン" 
+	postnum=20
+
+favicon = "favicon.ico"
+
+# Social Tags
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/AO2233"
+
+[[params.social]]
+name = "GitLab"
+icon = "gitlab"
+url = "https://gitlab.com/AO2233"
+
+[[params.social]]
+name = "X"
+icon = "twitter"
+url = "https://twitter.com/u604b"
+
+[[params.social]]
+name = "Kaggle"
+icon = "link"
+url = "https://www.kaggle.com/ao2233"
+
+[[params.social]]
+name = "Atcoder"
+icon = "code"
+url = "https://atcoder.jp/users/AO2233"
+
+[[params.social]]
+name = "Leetcode"
+icon = "hash"
+url = "https://leetcode.com/AO2233"
+
+[[params.social]]
+name = "Mail"
+icon = "mail"
+url = "mailto:e_mail@outlook.com"
+
+# extra link
+#[[params.extralink]]
+#name = "Google"
+#url = "https://google.com"
+
+# Main menu Items
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+#[[menu.main]]
+#name = "Tag"
+#url = "/Tags"
+#weight = 4
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.asciidocExt]
+    backend = 'html5'
+    extensions = []
+    failureLevel = 'fatal'
+    noHeaderOrFooter = true
+    preserveTOC = false
+    safeMode = 'unsafe'
+    sectionNumbers = false
+    trace = false
+    verbose = false
+    workingFolderCurrent = false
+    [markup.asciidocExt.attributes]
+  [markup.blackFriday]
+    angledQuotes = false
+    footnoteAnchorPrefix = ''
+    footnoteReturnLinkContents = ''
+    fractions = true
+    hrefTargetBlank = false
+    latexDashes = true
+    nofollowLinks = false
+    noreferrerLinks = false
+    plainIDAnchors = true
+    skipHTML = false
+    smartDashes = true
+    smartypants = true
+    smartypantsQuotesNBSP = false
+    taskLists = true
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+    style = 'monokai'
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2

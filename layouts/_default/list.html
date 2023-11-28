@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ if isset .Data "Term" }}
+<h1>{{ .Data.Term }}</h1>
+{{ else }}
+<h1 class="page-title">All</h1>
+{{ end }}
+
+<!-- <ul class="posts">
+	{{- range .Data.Pages -}}
+		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+		<li class="post">
+			<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+		</li>
+		{{- end -}}
+	{{- end -}}
+</ul> -->
+<main class="list">
+	<!-- <h1 class="page-title">Recent articles</h1> -->
+	{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+	{{ $paginator := ($.Paginator 50) }}
+	{{ range $paginator.Pages }}
+	
+	<section class="list-item">
+		<!-- <h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1> -->
+		<!-- <li class="posts">{{.Title}}</a></li> -->
+		<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+		<!-- <time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time>  -->
+		<!-- <br><div class="description">
+			{{ if isset .Params "description" }}
+			{{ .Description }}
+			{{ else }}
+			{{ .Summary }}&hellip;
+			{{ end }}
+		</div> -->
+		<!-- {{ .Content }} -->
+		<!-- <a href="{{ .RelPermalink }}">Read more ⟶</a> -->
+		<!-- <ul class="posts"> -->
+				<!-- <li class="post">
+					<a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+					{{ .Content }}
+				</li> -->
+		<!-- </ul> -->
+	</section>
+	{{ end }}
+	{{ $pag := ($.Paginator 50) }}
+	{{ if gt $pag.TotalPages 1 }}
+	<ul class="pagination">
+		<span class="page-item page-prev">
+		{{ if $pag.HasPrev }}
+		<a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+		{{ end }}
+		</span>
+		<span class="page-item page-next">
+		{{ if $pag.HasNext }}
+		<a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+		{{ end }}
+		</span>
+	</ul>
+{{ end }}
+</main>
+{{ end }}

@@ -1,0 +1,136 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- choose no-cache -->
+	<!-- meta http-equiv="Pragma" content="no-cache"  -->
+	{{- $title := ( .Title ) -}}
+	{{- $siteTitle := ( .Site.Title ) -}}
+	{{- if .IsHome -}}
+	<title>{{ $siteTitle }} | Home </title>
+	{{- else -}}
+	<title>{{ $title }} - {{ $siteTitle }}</title>
+	{{- end -}}
+
+	{{- if isset .Site.Params "favicon" -}}
+	<link rel="icon" type="image/png" href={{ .Site.BaseURL }}favicon.ico />
+	{{- end -}}
+
+	<meta id="viewport" name="viewport">
+
+<script type="text/javascript">
+//mobile viewport hack
+(function(){
+
+  function apply_viewport(){
+    // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)   ) {
+      var ww = window.screen.width;
+      var mw = 350; // min width of site
+      var ratio =  ww / mw; //calculate ratio
+      var viewport_meta_tag = document.getElementById('viewport');
+      if( ww < mw){ //smaller than minimum size
+        viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', width=device-width');
+      }
+      else { //regular size
+        viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, width=device-width');
+      }
+    // }
+  }
+
+  //update viewport scale if screen dimentions changed
+  window.addEventListener('resize', function(){
+    apply_viewport();
+  });
+
+  apply_viewport();
+}());
+</script>
+
+	<!-- {{- template "_internal/twitter_cards.html" . -}} -->
+	<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+	{{ $style := resources.Get "css/main.css" }}
+	{{ $fontstyle := resources.Get "css/fonts.css" }}
+    
+
+	{{ $aplayer_css := resources.Get "aplayer/APlayer.min.css" }}
+	{{ $aplayer_js := resources.Get "aplayer/APlayer.min.js" }}
+	{{ $dplayer_js := resources.Get "dplayer/DPlayer.min.js" }}
+	{{ $video_js := resources.Get "videojs/video.min.js" }}
+	{{ $video_css := resources.Get "videojs/video-js.min.css" }}
+	<link href="{{ $fontstyle.Permalink }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+	<link rel="stylesheet" href="{{ $aplayer_css.Permalink }}" >
+	<link rel="stylesheet" href="{{ $video_css.Permalink }}" >
+
+	<script src="{{ $aplayer_js.Permalink }}"></script>
+	<script src="{{ $dplayer_js.Permalink }}"></script>
+	<script src="{{ $video_js.Permalink }}"></script>
+	<script src="{{ .Site.BaseURL }}js/pdfobject.min.js"></script>
+
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}js/katex.min.css" crossorigin="anonymous">
+	<script defer src="{{ .Site.BaseURL }}js/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="{{ .Site.BaseURL }}js/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+
+	<!-- inline support -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+				{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+				{left: "\\(", right: "\\)", display: false},
+				]
+			});
+		});
+	</script>
+
+	<script src="{{ .Site.BaseURL }}js/mermaid.min.js"></script>
+
+	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") (eq .Site.Params.mode "toggle") -}}
+		{{ $darkstyle := resources.Get "css/dark.css" }}
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}"{{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} {{ if eq .Site.Params.mode "toggle" }}disabled{{ end }} />
+		<script>
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		var config = {
+			startOnLoad:true,
+			flowchart:{
+			useMaxWidth:true,
+			htmlLabels:true,
+			curve:'cardinal',
+			},
+			securityLevel:'loose',
+		};
+		// why frash -> just for mermaid
+		var a=0;
+		function darkModeHandler() {
+			if (mediaQuery.matches) {
+				mermaid.initialize({
+					// startOnLoad:true,
+					theme: 'dark',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				// console.log('dark mode')
+			} else {
+				mermaid.initialize({
+					// startOnLoad:true,
+					theme: 'base',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				// console.log('light mode')
+			}
+		}
+
+		darkModeHandler()
+		mediaQuery.addListener(darkModeHandler)
+
+		</script>
+		{{ end }}
+</head>
