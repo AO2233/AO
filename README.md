@@ -3,6 +3,7 @@
 **Demo`(zh + jp + en)`** -> [ao2233.xyz](https://ao2233.xyz)
 
 <p align="center">
+   
    <img width="720"  src="https://github.com/AO2233/archive/blob/main/img/AO/2.png">
    <img width="720"  src="https://github.com/AO2233/archive/blob/main/img/AO/1.png">
    <img width="720"  src="https://github.com/AO2233/archive/blob/main/img/AO/5.png">
@@ -11,8 +12,15 @@
    <img width="720"  src="https://github.com/AO2233/archive/blob/main/img/AO/3.png">
 </p>
 
+<p float="center">
+  <img src="https://github.com/AO2233/archive/blob/main/img/AO/7.PNG" />
+  <img src="https://github.com/AO2233/archive/blob/main/img/AO/8.PNG" />
+  <img src="https://github.com/AO2233/archive/blob/main/img/AO/9.PNG" />
+</p>
+
 ## New Feature
 > for features in archie, follow [archie](https://github.com/athul/archie) to set
+- Mobile Device Style Support
 - Dark/Light Mode Auto Toggle (based on system theme mode -> Windows10+✅, MacOS✅, Linux Gnome43✅)
 - Full LaTeX support
 - PDF Display
