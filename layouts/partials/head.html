@@ -1,0 +1,127 @@
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- choose no-cache -->
+	<!-- meta http-equiv="Pragma" content="no-cache"  -->
+	{{- $title := ( .Title ) -}}
+	{{- $siteTitle := ( .Site.Title ) -}}
+	{{- if .IsHome -}}
+	<title>{{ $siteTitle }} | Home </title>
+	{{- else -}}
+	<title>{{ $title }} - {{ $siteTitle }}</title>
+	{{- end -}}
+
+	{{- if isset .Site.Params "favicon" -}}
+	<link rel="icon" type="image/png" href={{ .Site.BaseURL }}favicon.ico />
+	{{- end -}}
+
+	<meta id="viewport" name="viewport">
+
+<!-- <script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+		const body = document.body;
+		const minPageWidth = parseFloat(window.getComputedStyle(body).minWidth);
+		const deviceWidth = window.innerWidth;
+		const scale = deviceWidth / minPageWidth;
+
+		const metaViewport = document.querySelector('meta[name=viewport]');
+		metaViewport.setAttribute('content', `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`);
+	});
+</script> -->
+
+	{{ $style := resources.Get "css/main.css" }}
+	{{ $fontstyle := resources.Get "css/fonts.css" }}
+	{{ $aplayer_css := resources.Get "aplayer/APlayer.min.css" }}
+	{{ $aplayer_js := resources.Get "aplayer/APlayer.min.js" }}
+	{{ $dplayer_js := resources.Get "dplayer/DPlayer.min.js" }}
+	{{ $video_js := resources.Get "videojs/video.min.js" }}
+	{{ $video_css := resources.Get "videojs/video-js.min.css" }}
+
+	<link rel="stylesheet" href="{{ $fontstyle.Permalink }}" >
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+	<link rel="stylesheet" href="{{ $aplayer_css.Permalink }}" >
+	<link rel="stylesheet" href="{{ $video_css.Permalink }}" >
+
+	<script src="{{ $aplayer_js.Permalink }}"></script>
+	<script src="{{ $dplayer_js.Permalink }}"></script>
+	<script src="{{ $video_js.Permalink }}"></script>
+
+	<script src="{{ .Site.BaseURL }}js/pdfobject.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+
+	<!-- MathJAX remove -->
+	<!-- <script id="MathJax-script" async src="{{ .Site.BaseURL }}js/tex-chtml.js"></script> -->
+	<!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<script>
+	MathJax = {
+		tex: {
+		displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
+		inlineMath: [['\\(', '\\)']]                  // inline
+		}
+	};
+	</script> -->
+	
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}katex/katex.min.css" crossorigin="anonymous">
+	<script defer src="{{ .Site.BaseURL }}katex/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="{{ .Site.BaseURL }}katex/contrib/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+			//	{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+			//	{left: "\\(", right: "\\)", display: false},
+				]
+			});
+		});
+	</script>
+	
+	<script src="{{ .Site.BaseURL }}js/mermaid.min.js"></script>
+
+	<!-- dark mode  -->
+	{{ $darkstyle := resources.Get "css/dark.css" }}
+	<link id="darkModeStyle" rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" media="(prefers-color-scheme: dark)"/>
+	<script>
+	const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+	var config = {
+		startOnLoad:true,
+		flowchart:{
+		useMaxWidth:true,
+		htmlLabels:true,
+		curve:'cardinal',
+		},
+		securityLevel:'loose',
+	};
+	// why frash -> just for mermaid
+	var a=0;
+	function darkModeHandler() {
+		if (mediaQuery.matches) {
+			mermaid.initialize({
+				// startOnLoad:true,
+				theme: 'dark',
+				config
+			});
+			if (a>0){
+				document.location.reload(false);
+			}
+			a+=1;
+			// console.log('dark mode')
+		} else {
+			mermaid.initialize({
+				// startOnLoad:true,
+				theme: 'base',
+				config
+			});
+			if (a>0){
+				document.location.reload(false);
+			}
+			a+=1;
+			// console.log('light mode')
+		}
+	}
+	darkModeHandler()
+	mediaQuery.addListener(darkModeHandler)
+
+	</script>
+</head>

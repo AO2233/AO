@@ -1,0 +1,164 @@
+baseURL: https://ao2233.github.io/
+title: 帰宅部
+theme: AO
+copyright: AO
+favicon: favicon.ico
+
+
+# code setting
+pygmentsstyle: native
+pygmentscodefences: true
+pygmentscodefencesguesssyntax: true
+
+# articale
+pagination:
+  pagerSize: 1
+  
+# deprecated: site config key paginate was deprecated in Hugo v0.128.0 and will be removed in a future release. 
+# Use pagination.pagerSize instead.
+# paginate: 1
+
+params:
+  subtitle: さらば、すべてのエヴァンゲリオン
+  postnum: 20
+  social:
+    - name: GitHub
+      icon: github
+      url: https://github.com/AO2233
+    - name: GitLab
+      icon: gitlab
+      url: https://gitlab.com/AO2233
+    - name: Kaggle
+      icon: link
+      url: https://www.kaggle.com/ao2233
+    - name: Atcoder
+      icon: code
+      url: https://atcoder.jp/users/AO2233
+    - name: Leetcode
+      icon: hash
+      url: https://leetcode.com/AO2233
+    - name: Mail
+      icon: mail
+      url: mailto:qingao@ruri.waseda.jp
+  
+  # extralink:
+  #   - name: GitHub
+  #     url: https://github.com/AO2233
+    
+
+
+# Tag setting
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Archives
+      url: /posts
+      weight: 2
+    - name: About
+      url: /about
+      weight: 3
+      
+    # - name: Tags
+    #   url: /tags
+    #   weight: 4
+
+# markup & code
+markup:
+  defaultMarkdownHandler: goldmark
+  asciidocExt:
+    backend: html5
+    extensions: []
+    failureLevel: fatal
+    noHeaderOrFooter: true
+    preserveTOC: false
+    safeMode: unsafe
+    sectionNumbers: false
+    trace: false
+    verbose: false
+    workingFolderCurrent: false
+    attributes: {}
+  blackFriday:
+    angledQuotes: false
+    footnoteAnchorPrefix: ""
+    footnoteReturnLinkContents: ""
+    fractions: true
+    hrefTargetBlank: false
+    latexDashes: true
+    nofollowLinks: false
+    noreferrerLinks: false
+    plainIDAnchors: true
+    skipHTML: false
+    smartDashes: true
+    smartypants: true
+    smartypantsQuotesNBSP: false
+    taskLists: true
+
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: false
+    parser:
+      autoHeadingID: true
+      autoHeadingIDType: github
+      attribute:
+        block: false
+        title: true
+    renderer:
+    #   hardWraps: false # markdown里的换行符是否被解释为换行 
+        unsafe: true # 是否允许渲染html标签
+    #   xhtml: false 
+    passthrough:
+      enable: true
+      delimiters:
+        block:
+        - - $$
+          - $$
+        inline:
+        - - $
+          - $
+
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+    style: monokai
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+
+
+#languages:
+#  en:
+#    languageCode: "en"
+#    weight: 2
+#  zh:
+#    languageCode: "zh"
+#    weight: 1
+#    title: "归宅部"
+
+defaultContentLanguage: en
+#defaultContentLanguageInSubdir: false
+
+# taxonomies: {} # remove tags, categories, https://gohugo.io/content-management/taxonomies/
+
+taxonomies:
+  tag: tags
+
+# files in static are always pulled on a build.
+# assets only when needed/requested by the code/function/module/shortcode etc.
+# they all put in the same directory -> {root path} in the final build.
