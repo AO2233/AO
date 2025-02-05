@@ -27,7 +27,7 @@
   }
   
   p {
-    line-height: 1.5;
+    line-height: 1.5em;
     /* if you want indent */
     /* text-indent: 2rem; */
   }
@@ -158,12 +158,11 @@
 
   /* Containers */
   .content {
-    margin-bottom: 4em;
+    margin-bottom: 5rem; /* footer height, for aplayer*/
     margin-left: auto;
     margin-right: auto;
-    min-width: 375px;
+    /* min-width: 375px; */
     max-width: 1080px;
-    padding: 0 1;
     word-wrap: break-word;
   }
 
@@ -602,13 +601,13 @@ a[href^="#fn:"]:after{ content: ']' }
 .collapsible {
   border: 1px solid #444;
   overflow: hidden;
-  margin: 1rem auto;
+  margin: 1rem 0;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .collapsible .bar {
   /* background: #333; */
-  padding: 0.8rem;
+  padding: 0.6rem;
   cursor: pointer;
   user-select: none;
   font-size: 1rem;
@@ -629,9 +628,8 @@ a[href^="#fn:"]:after{ content: ']' }
 
 .collapsible .content {
   display: none;
-  padding: 0 1rem 0;
   animation: fadeIn 0.3s;
-  margin: 1rem auto;
+  margin: 0.5rem;
 }
 
 .collapsible.active .content {
