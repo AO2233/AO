@@ -182,3 +182,9 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #666; 
 }
+
+
+.collapsible {
+  border: 1px solid #AAA;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
