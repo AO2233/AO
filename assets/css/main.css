@@ -114,7 +114,7 @@
   /* Code blocks */
   code {
     background-color: #f1f1f1;
-    padding: .1em .2em;
+    /* padding: .1em .2em; */
     font-family: 'DOS','DOS-c','Sarasa Mono Slab SC';
   }
   
@@ -541,7 +541,7 @@
     .chroma {
       border-radius: 0;
       background-color: #ececec;
-      padding: 0.25em;
+      padding: 0.8em;
   }
 
   /* *:not(span, pre){
