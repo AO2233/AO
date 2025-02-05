@@ -4,7 +4,6 @@
   --bordercl:rebeccapurple;
   --callouctcolor:dodgerblue;
   --hovercolor:navy;
-  /* --hovercolor:white; */
   --darkMaincolor: #50fa7b;
   }
   
@@ -166,57 +165,6 @@
     word-wrap: break-word;
   }
 
-/* 对于过宽画幅采用缩放的方法 */
-  /*
-      800px <= width <= 1115px
-    width = 800px -> display 
-      800 - 800*(2*0.01) = 784
-    grow padding to 15%
-      800 / (1-2*0.20) = 1333px
-    */
-  /* @media screen and (min-width: 800px) and (max-width: 1333px) {
-    .content {
-      padding: 0 auto;
-      width: 784px;
-    }
-  } */
-  /* 
-    width >= 1115px
-    for smooth padding
-  */
-  /* @media screen and (min-width: 1333px) and (max-width: 2178px) {
-    img {
-      padding: 0 auto;
-      max-width: 784px;
-    }
-    .content {padding: 0 20%;}
-  } */
-  /* 
-    0.6*0.4+0.4 = 0.64 
-    784/0.36 = 2178px
-      for pic smooth padding
-  */
-
-  /* @media screen and (min-width: 2178px) {
-    img {
-      max-width: 60%;
-    }
-    .content {padding: 0 20%;}
-  } */
-
-  /* 
-  a = 800
-  b = 1333
-  c = 2178
-  img.width=0.6
-  content.padding=0.2
-  
-  a -> setting the default width
-  b = a/(1-2*p_m)
-  t = (1-2*content.padding)*img.width + 2*content.padding
-  c = b/(1-t)
-  */
- 
   /* Header */
   header {
     display: flex;
@@ -251,10 +199,10 @@
   }
   
   /* Common */
-  .title h1 {
-    /* margin-bottom: 0; */
-    /* margin-top: 0em; */
-  }
+  /* .title h1 {
+    margin-bottom: 0;
+    margin-top: 0em;
+  } */
   
   time {
     color: grey;
@@ -288,7 +236,7 @@
   }
   
   .site-description {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   }
   .tags li::before{
@@ -460,9 +408,6 @@
     color: gray;
   }
   
-  
-  /* ......................... */
-  
     /* LineNumbersTable */  .lnt { color: white }
     /* LineHighlight */  .hl { display: block; width: 100%; background-color: #ffffcc }
   
@@ -549,8 +494,8 @@
   } */
 
 /* 引脚设置 */
-a[href^="#fn:"]:before{ content: '[' }
-a[href^="#fn:"]:after{ content: ']' }
+a[href^="#fn:"]:before{ content: '<' }
+a[href^="#fn:"]:after{ content: '>' }
 
 .pagination {
   margin: 0;
@@ -592,9 +537,9 @@ a[href^="#fn:"]:after{ content: ']' }
 	margin-right:auto;
 }
 
-.footnote-ref {
+/* .footnote-ref {
   font-size: 0.75em;
-}
+} */
 
 /* collapsible bar */
 .collapsible {
