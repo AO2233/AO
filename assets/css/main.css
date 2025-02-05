@@ -597,7 +597,6 @@ a[href^="#fn:"]:after{ content: ']' }
 }
 
 /* collapsible bar */
-
 .collapsible {
   border: 1px solid #444;
   overflow: hidden;
@@ -606,7 +605,6 @@ a[href^="#fn:"]:after{ content: ']' }
 }
 
 .collapsible .bar {
-  /* background: #333; */
   padding: 0.6rem;
   cursor: pointer;
   user-select: none;
@@ -616,23 +614,23 @@ a[href^="#fn:"]:after{ content: ']' }
 }
 
 .collapsible .bar::after {
-  content: "▼";
+  content: "↓";
   position: absolute;
   right: 1rem;
   transition: transform 0.3s;
 }
 
-.collapsible.active .bar::after {
-  transform: rotate(180deg);
-}
-
 .collapsible .content {
   display: none;
-  animation: fadeIn 0.3s;
+  animation: fadeIn 0.5s;
   margin: 0.5rem;
 }
 
-.collapsible.active .content {
+.collapsible.active > .bar::after {
+  transform: rotate(180deg);
+}
+
+.collapsible.active > .content {
   display: block;
 }
 
