@@ -1,0 +1,145 @@
+:root {
+  --mermaid-theme: dark;
+  --darkbgcolor: #202124
+  /* base, dark, forest, neutral, night */
+}
+
+body {
+  color: white;
+  background-color: var(--darkbgcolor);
+}
+
+::-moz-selection {
+  background: var(--darkcolor);
+  color: #000;
+}
+
+::selection {
+  background: var(--darkcolor);
+  color: #000;
+}
+
+hr {
+  border-top: 3px dotted lightcoral;
+}
+
+/* ========== code 会覆盖全局所有的普通code颜色 此处加入pre 还原 ``` 的 ========= */
+code {
+  background-color: lightblue;
+  color: var(--darkbgcolor);
+}
+
+pre code {
+  color: white;
+}
+/* =================== */
+
+pre {
+  background-color: var(--darkbgcolor);
+}
+
+blockquote {
+  border-color: palevioletred;
+}
+
+h1::before {
+  color: var(--darkcolor);
+}
+
+h2::before {
+  color: var(--darkcolor);
+}
+
+h3::before {
+  color: var(--darkcolor);
+}
+
+h4::before {
+  color: var(--darkcolor);
+}
+
+h5::before {
+  color: var(--darkcolor);
+}
+
+h6::before {
+  color: var(--darkcolor);
+}
+
+a {
+  border-bottom: 3px solid var(--darkcolor);
+  color: inherit;
+}
+
+a:hover {
+  background-color: var(--darkcolor);
+  color: black;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none !important;
+}
+
+.header nav,
+.footer {
+  border-color: #333;
+}
+
+.soc:hover {
+  color: black;
+}
+
+.draft-label {
+  color: var(--darkcolor);
+  background-color: blue;
+}
+
+/* 代码块 */
+.chroma {
+  background-color: #1c1c1c
+}
+
+.highlight pre code[class*="language-"]::before {
+  background: whitesmoke;
+  color: black;
+}
+
+.ln {
+  color: lightblue;
+}
+
+/* Aplayer */
+.aplayer-music .aplayer-title {
+  color: #999;
+}
+
+/* 滑动条 */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* 伸缩 Box */
+.collapsible {
+  border: 1px solid #AAA;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.callout {
+  border-left: 0.3rem solid var(--darkcolor);
+  background-color: #333;
+}
+
+blockquote {
+  color: #EEE;
+}
+
+.list-item {
+  border-bottom: none;
+  color: #EEE;
+  line-height: 1.7em;
+}

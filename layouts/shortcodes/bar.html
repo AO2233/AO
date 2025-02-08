@@ -1,0 +1,6 @@
+<div class="collapsible">
+  <div class="bar">{{ .Get "title" | markdownify }}</div>
+  <div class="content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

@@ -1,0 +1,25 @@
+---
+permalink: /404.html
+---
+<!-- 本地调试注释 permalink -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="{{ .Site.BaseURL }}css/fonts.css" rel="stylesheet">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Error 404</title>
+		<!-- Stylesheets -->
+		
+		<link rel="stylesheet" href="{{ .Site.BaseURL  }}404/style.css" />
+	</head>
+	<body class="fadeDown">
+		<div class="center">
+			<h1>Error</h1>
+			<div class="errorCode">404
+			</div>
+			<p>Page not found</p>
+			<img src="{{ .Site.BaseURL  }}404/no-data.png"/>
+		</div>
+	</body>
+</html>

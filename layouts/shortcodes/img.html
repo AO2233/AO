@@ -1,0 +1,11 @@
+{{ $width := .Get "width" | default "auto" }}
+{{ $hight := .Get "hight" | default "auto" }}
+{{ $imageSrc := .Get "src" }}
+{{ $altText := .Get "alt" }}
+
+<div style="text-align: center;">
+<img src="{{ $imageSrc }}" alt="{{ $altText }}" style="width: {{ $width }}; hight:{{ $hight }}" class="zoom-image" >
+{{ with .Get "capture" }}
+<p style="margin: 0.1rem;">{{ . | markdownify }}</p>
+{{ end }}
+</div>

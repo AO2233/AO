@@ -1,0 +1,18 @@
+<header>
+	<div class="main">
+		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		<link rel="icon" type="image/png" href={{ .Site.BaseURL }}favicon.ico />
+	</div>
+
+	<!-- 添加副导航 -->
+	<nav>
+		{{ range .Site.Menus.main }}
+		<a href="{{ .URL }}" class="sub-main">{{ .Name }}</a>
+		{{ end }}
+
+	<!-- 根据 name 属性生成链接  -->
+		{{ range .Site.Params.extralink }}
+		<a href="{{ .url }}" class="sub-main">{{ .name }}</a>
+		{{ end }}
+	</nav>
+</header>

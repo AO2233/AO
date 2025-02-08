@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main>
+	<!-- 单页查看 -->
+	<div class="title">
+		<h1 class="title">{{ .Title }}</h1>
+		<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date  }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+	</div>
+	<section class="body">
+	<article>
+		{{ .Content }}
+	</article>
+	</section>
+</main>
+{{ end }}

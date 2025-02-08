@@ -1,0 +1,15 @@
+<div id="{{- .Get `id` -}}"></div>
+<script>
+ap = new APlayer({
+    container: document.getElementById('{{- .Get `id` -}}'),
+    fixed: '{{- .Get `fix` | default `` -}}',
+    audio: [{
+        name: '{{- .Get `name` -}}' ,
+        artist: '{{- .Get `artist` | default `` -}}',
+        url: '{{ .Get `url` -}}',
+        cover: '{{- .Get `cover` | default `` -}}',
+        autoplay: '{{- .Get `auto` | default `true` -}}',
+        lrc: '{{- .Get `lrc` | default `no lrc` -}}'
+    }]
+});
+</script>

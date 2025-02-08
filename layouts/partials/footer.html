@@ -1,0 +1,23 @@
+<!-- 添加最后的图标引脚 -->
+<footer class="footer">
+<hr>
+{{- range $index, $key := .Site.Params.Social -}}
+<!-- <a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><ion-icon name="logo-github"></ion-icon></a> -->
+<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>
+<!-- -->
+{{- end -}}
+</footer>
+
+{{- if (isset .Site.Params "social") -}}
+
+<script>
+      feather.replace()
+      // 图片缩放 加载
+      const images = document.querySelectorAll('.zoom-image');  
+      mediumZoom(images,{
+            background: 'rgba(0, 0, 0, 0.7)', // 完全透明背景
+            margin: 0, // 图片与窗口的边距
+      });
+</script>
+{{- end -}}
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 首页界面 -->
+<html>
+	{{- partial "head.html" . -}}
+	<body>
+		<div class="content">
+			{{- partial "header.html" . -}}
+			<main class="list">
+				<div class="site-description">
+					{{- if isset .Site.Params "subtitle" -}}
+					<p class="site-description">{{ .Site.Params.Subtitle | markdownify }}</p>
+					{{- end -}}
+				</div>
+
+				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+				{{ $paginator := .Paginate ($pages) }}
+				{{ range $paginator.Pages }}
+
+				<article>
+				<h1 class="title">{{.Title}}</a></h1>
+				<time>{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time> 
+				{{ .Content }}
+				</article>
+				{{ end }}
+				{{- partial "partials/paginator.html" . -}}
+			</main>
+			{{- partial "footer.html" . -}}
+		</div>
+		
+	</body>
+</html>

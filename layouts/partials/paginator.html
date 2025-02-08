@@ -1,0 +1,14 @@
+<!-- 导航器生成  -->
+{{ $page := $.Paginator }}
+<ul class="pagination">
+	<span class="page-item page-prev">
+	{{ if $page.HasPrev }}
+    <a {{ if $page.HasPrev }}href="{{ $page.Prev.URL }}"{{ end }} class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+	{{ end }}
+	</span>
+	<span class="page-item page-next">
+	{{ if $page.HasNext }}
+    <a {{ if $page.HasNext }}href="{{ $page.Next.URL }}"{{ end }} class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+	{{ end }}
+	</span>
+</ul>

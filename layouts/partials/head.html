@@ -1,0 +1,82 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+	<meta name=viewport content="width=device-width,initial-scale=1">
+
+	{{- $title := ( .Title ) -}}
+	{{- $siteTitle := ( .Site.Title ) -}}
+	{{- if .IsHome -}}
+	<title>{{ $siteTitle }} | Home </title>
+	{{- else -}}
+	<title>{{ $title }} - {{ $siteTitle }}</title>
+	{{- end -}}
+
+	{{- if isset .Site.Params "favicon" -}}
+	<link rel="icon" type="image/png" href={{ .Site.BaseURL }}favicon.ico />
+	{{- end -}}
+
+	<!-- css load -->
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/code_style.css">
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/code_light.css">
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/fonts.css">
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}js/aplayer/APlayer.min.css">
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}js/videojs/video-js.min.css">
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}/js/zoom/style.min.css">
+
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/code_dark.css" media="(prefers-color-scheme: dark)" />
+	<!-- css loaded -->
+
+	<!-- js load -->
+	<script src="{{ .Site.BaseURL }}js/aplayer/APlayer.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/dplayer/DPlayer.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/videojs/video.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/zoom/medium-zoom.min.js"></script>
+
+	<script src="{{ .Site.BaseURL }}js/pdfobject.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
+	<script src="{{ .Site.BaseURL }}js/collapsible.js"></script>
+	<script src="{{ .Site.BaseURL }}js/mermaid.min.js"></script>
+	<!-- js loaded -->
+
+	<!-- katex -->
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}js/katex/katex.min.css" crossorigin="anonymous">
+	<script defer src="{{ .Site.BaseURL }}js/katex/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="{{ .Site.BaseURL }}js/katex/contrib/auto-render.min.js" crossorigin="anonymous"
+		onload="renderMathInElement(document.body);"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			renderMathInElement(document.body, {
+				delimiters: [
+					{ left: "$$", right: "$$", display: true },
+					//	{left: "\\[", right: "\\]", display: true},
+					{ left: "$", right: "$", display: false },
+					//	{left: "\\(", right: "\\)", display: false},
+				]
+			});
+		});
+	</script>
+	<!-- katex configured -->
+
+	
+	<!-- why frash -> hook for mermaid -->
+	<script>
+		const mq = window.matchMedia('(prefers-color-scheme: dark)'),
+			config = { startOnLoad: true, flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'cardinal' }, securityLevel: 'loose' };
+		let inited = false,
+			setTheme = dark => {
+				mermaid.initialize({ theme: dark ? 'dark' : 'base', config });
+				if (inited) location.reload(false);
+				inited = true;
+			};
+
+		setTheme(mq.matches);
+		(mq.addEventListener ? mq.addEventListener : mq.addListener).call(mq, 'change', e => setTheme(e.matches));
+	</script>
+
+	<!-- dev part -->
+	<!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+
+</head>

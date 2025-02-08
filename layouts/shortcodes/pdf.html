@@ -1,0 +1,11 @@
+<!-- <div>
+    <iframe height='{{- .Get `h` | default `auto` -}}' height="auto" src='{{ .Site.BaseURL  }}{{- .Get `path` -}}' type="application/pdf" width="100%"></iframe>
+</div> -->
+<!-- can't be just number -->
+<div id='{{- .Get `id` -}}'></div>
+<script>
+    var options = {
+            fallbackLink: "<p>The browser does not support embedded <a href='[url]'>PDF</a> documents. </p>"
+            };
+    PDFObject.embed("{{- .Get `path` -}}", "#{{- .Get `id` -}}", {height:'{{- .Get `h` | default `50rem` -}}'}, options);
+</script>
