@@ -5,7 +5,7 @@
 
 <div style="text-align: center;">
 <img src="{{ $imageSrc }}" alt="{{ $altText }}" style="width: {{ $width }}; hight:{{ $hight }}; cursor: default;" class="zoom-image" >
-{{ with .Get "capture" }}
+{{ with .Get "caption" }}
 <p style="margin: 0.1rem;">{{ . | markdownify }}</p>
 {{ end }}
 </div>

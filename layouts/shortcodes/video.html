@@ -1,0 +1,12 @@
+{{ $width := .Get "width" | default "auto" }}
+
+<div style="text-align: center;">
+<video autoplay loop muted playsinline preload="auto" style="max-width: {{ $width }}; width: 100%;">
+    <source src="{{- .Get "src" -}}" type="{{- .Get "type" | default "video/mp4" -}}">
+    check the <a href="{{- .Get "src" -}}">video</a>.
+  </video>
+{{ with .Get "caption" }}
+<p style="margin: 0.1rem;">{{ . | markdownify }}</p>
+{{ end }}
+</div>
+  
