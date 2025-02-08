@@ -3,7 +3,6 @@ baseURL: https://ao2233.github.io/
 title: 帰宅部
 theme: pixel
 copyright: MIT License
-favicon: favicon.ico
 
 # taxonomies: {} # remove tags, categories, https://gohugo.io/content-management/taxonomies/
 taxonomies:
@@ -14,6 +13,7 @@ pagination:
 
 # 自设置参数
 params:
+  favicon: "favicon.ico"
   subtitle: さらば、すべてのエヴァンゲリオン
   paginate: 50 # Number of posts per page
   social:
@@ -61,7 +61,7 @@ menu:
       url: /about
       weight: 4
 
-defaultContentLanguage: zh
+defaultContentLanguage: en
 #defaultContentLanguageInSubdir: false
 
 # languages:

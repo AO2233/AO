@@ -10,11 +10,8 @@
 	{{- else -}}
 	<title>{{ $title }} - {{ $siteTitle }}</title>
 	{{- end -}}
-
-	{{- if isset .Site.Params "favicon" -}}
-	<link rel="icon" type="image/png" href={{ .Site.BaseURL }}favicon.ico />
-	{{- end -}}
-
+	
+	<link rel="icon" href={{ .Site.BaseURL }}{{- .Site.Params.favicon -}} />
 	<!-- css load -->
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/code_style.css">
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/code_light.css">
