@@ -1,4 +1,4 @@
-# My blog theme
+# My blog theme - pixel
 
 [English](https://github.com/AO2233/AO/blob/master/README.md) | [简体中文](https://github.com/AO2233/AO/blob/master/README.zh-CN.md)
 
