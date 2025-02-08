@@ -343,6 +343,7 @@ a[href^="#fn:"]:after{ content: '>' }
   border-bottom: none;
   color: #333;
   line-height: 1.7em;
+  padding: 0.2rem;
 }
 
 /* ============== hook ============= */
