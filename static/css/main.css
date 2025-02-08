@@ -353,4 +353,8 @@ a[href^="#fn:"]:after{ content: '>' }
   padding: 0.2rem;
 }
 
+* {
+  cursor: default;
+}
+
 /* ============== hook ============= */
