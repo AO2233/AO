@@ -13,7 +13,7 @@ pagination:
 
 # 自设置参数
 params:
-  favicon: "favicon.ico"
+  favicon: "duck.ico"
   subtitle: さらば、すべてのエヴァンゲリオン
   paginate: 50 # Number of posts per page
   social:
