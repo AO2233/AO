@@ -5,11 +5,13 @@
 
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
-	{{- if .IsHome -}}
-	<title>{{ $siteTitle }} | Home </title>
+	<!-- {{- if .IsHome -}}
+	<title>{{ $siteTitle }} </title>
 	{{- else -}}
 	<title>{{ $title }} - {{ $siteTitle }}</title>
-	{{- end -}}
+	{{- end -}} -->
+
+	<title>{{ $siteTitle }} </title>
 	
 	<link rel="icon" href={{ .Site.BaseURL }}{{- .Site.Params.favicon -}}>
 	<!-- css load -->

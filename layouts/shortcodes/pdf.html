@@ -7,5 +7,5 @@
     var options = {
             fallbackLink: "<p>The browser does not support embedded <a href='[url]'>PDF</a> documents. </p>"
             };
-    PDFObject.embed("{{- .Get `path` -}}", "#{{- .Get `id` -}}", {height:'{{- .Get `h` | default `50rem` -}}'}, options);
+    PDFObject.embed("{{- .Get `src` -}}", "#{{- .Get `id` -}}", {height:'70em'}, options);
 </script>

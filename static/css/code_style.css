@@ -28,6 +28,10 @@ top: 0;
   content: 'log';
 }
 
+.highlight pre code[class*='language-code']::before {
+  content: 'code';
+}
+
 .highlight pre code[class*='language-C#']::before,
 .highlight pre code[class*='language-c#']::before {
   content: 'C#';
@@ -41,9 +45,7 @@ top: 0;
   content: 'xml';
 }
 
-.highlight pre code[class*='language-text']::before {
-  content: 'text';
-}
+
 
 .highlight pre code[class=language-javaScript]::before,
 .highlight pre code[class="language-js"]::before {
@@ -139,6 +141,10 @@ top: 0;
 .highlight pre code[class*='language-markdown']::before,
 .highlight pre code[class*='language-md']::before {
   content: 'Markdown';
+}
+
+.highlight pre code[class*='language-text']::before {
+  content: 'text';
 }
 
 /*  ======================== 代码块  ======================== */
