@@ -4,8 +4,8 @@
 <!-- can't be just number -->
 <div id='{{- .Get `id` -}}'></div>
 <script>
-    var options = {
-            fallbackLink: "<p>The browser does not support embedded <a href='[url]'>PDF</a> documents. </p>"
-            };
-    PDFObject.embed("{{- .Get `src` -}}", "#{{- .Get `id` -}}", {height:'70em'}, options);
+var options = {
+    fallbackLink: "<p>The browser does not support embedded <a href='[url]'>PDF</a> documents. </p>"
+    };
+PDFObject.embed("{{- .Get `src` -}}", "#{{- .Get `id` -}}", {height:'70em'}, options);
 </script>
