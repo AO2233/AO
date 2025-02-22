@@ -36,9 +36,9 @@ params:
       icon: twitter
       url: https://x.com/u604b
   
-    - name: Message Box
+    - name: Mail
       icon: mail
-      url: https://marshmallow-qa.com/wwim0saksuvot4v
+      url: mailto:ao.debian@gmail.com
 
   # extralink:
   #   - name: GitHub

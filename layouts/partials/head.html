@@ -58,7 +58,6 @@
 	</script>
 	<!-- katex configured -->
 
-	
 	<!-- why frash -> hook for mermaid -->
 	<script>
 		const mq = window.matchMedia('(prefers-color-scheme: dark)'),
@@ -72,6 +71,16 @@
 
 		setTheme(mq.matches);
 		(mq.addEventListener ? mq.addEventListener : mq.addListener).call(mq, 'change', e => setTheme(e.matches));
+	</script>
+
+	<script>
+		window.addEventListener('scroll', function() {
+		var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		var scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+		var clientHeight = document.documentElement.clientHeight || window.innerHeight;
+		var scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+		document.getElementById('progress-bar').style.width = scrollPercent + '%';
+		});
 	</script>
 
 	<!-- dev part -->
