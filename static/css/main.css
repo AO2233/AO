@@ -364,6 +364,23 @@ a[href^="#fn:"]:after{ content: '>' }
 
 /* ============== hook ============= */
 
+
+/* ============== moe-wiki ============= */
+
+.moe-mask {
+  color: transparent;
+  background-color: black;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0 4px;
+}
+
+.moe-mask:hover {
+  color: inherit;
+  background-color: transparent;
+}
+
+/* ============== progress bar ============= */
 #progress-container {
   position: fixed;
   top: 0;
